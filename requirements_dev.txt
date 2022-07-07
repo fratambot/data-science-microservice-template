@@ -1,0 +1,7 @@
+-r requirements.txt
+
+#keras-tuner==1.1.2 (if you tune locally or on-premise)
+#matplotlib==3.5.1
+#pandas==1.4.2
+#seaborn==0.11.2
+#some_cloud_service_sdk (if you develop in the cloud)
