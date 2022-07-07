@@ -8,11 +8,22 @@ from src.utils.dev_utils import model_performance_plot
 
 
 def main():
-    print(
-        "some_arg_for_tuning_like_max_epochs = ",
-        some_arg_for_tuning_like_max_epochs,
-    )
+    print("higher_level_optional_arg = ", higher_level_optional_arg)
+    print("prepare_data = ", prepare_data)
     print("data_tag = ", data_tag)
+    print("prepare_data_arg = ", prepare_data_arg)
+    if not prepare_data:
+        if not data_tag:
+            raise Exception(
+                "you need to pass --data_tag to retrieve the existing data"
+            )
+        else:
+            # retrieve the data with the data_tag
+            print("loading data...")
+    else:
+        # prepare the data using prepare_data_arg, if passed
+        print("preparing data...")
+
     # load training data from /data folder or cloud using data_tag
     # get your tuner..
     some_tuner()
@@ -34,30 +45,42 @@ def main():
 
 
 if __name__ == "__main__":
-    # Parse args
-    docstring = """Script for data tuning and evaluation"""
+
     parser = argparse.ArgumentParser(
-        description=docstring,
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(
-        "--some_arg_for_tuning_like_max_epochs",
+        "--higher_level_optional_arg",
         default=5,
         type=int,
-        help="example of numerical arg like max_epochs",
+        help="some optional arg",
+    )
+    parser.add_argument(
+        "--prepare_data",
+        dest="prepare_data",
+        default=False,
+        action="store_true",
+        help="wether you want to prepare data or not",
     )
     parser.add_argument(
         "--data_tag",
-        required=True,
+        # required=True,
         type=str,
-        help="a string used to retrieve training data",
+        help="if prepare_data is false, this should be required \
+        to retrieve existing data",
+    )
+    parser.add_argument(
+        "--prepare_data_arg",
+        default=10,
+        type=int,
+        help="if prepare_data is true you can pass this if you want",
     )
 
     args = parser.parse_args()
-    some_arg_for_tuning_like_max_epochs = (
-        args.some_arg_for_tuning_like_max_epochs
-    )
+    higher_level_optional_arg = args.higher_level_optional_arg
+    prepare_data = args.prepare_data
     data_tag = args.data_tag
+    prepare_data_arg = args.prepare_data_arg
 
     main()
     print("=== Finished ===")
