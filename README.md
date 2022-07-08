@@ -18,6 +18,8 @@ The API run on [http://localhost:8883/](http://localhost:8883/).
 
 You can interact with it from your browser using the FastAPI UI on [http://localhost:8883/docs](http://localhost:8883/docs)
 
+![alt text](https://github.com/fratambot/static/blob/main/images/FastAPI_UI.png?raw=True)
+
 ## Development
 Development happens locally/on-premise or in the cloud via scripts in the `\app` folder.
 
@@ -48,6 +50,13 @@ This script is useful if you just want to train/retrain an existing model on new
 ```
 python app/train.py -h
 ```
+
+#### 🌐 API
+To test the inference API during development you can move in the `\app` and type:
+```
+uvicorn --reload main:app
+```
+The interactive API UI run on [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ## Disclaimer on Notebooks
 I love Jupyter notebooks and I use them a lot for exploration, experimentation and reporting but I prefer performing defined task with python scripts rather than using a state machine.
