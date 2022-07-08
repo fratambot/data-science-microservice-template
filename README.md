@@ -19,7 +19,7 @@ The API run on [http://localhost:8883/](http://localhost:8883/).
 You can interact with it from your browser using the FastAPI UI on [http://localhost:8883/docs](http://localhost:8883/docs)
 
 ## Development
-Development happens locally (meaning also on-premise if you have a cluster to which you can ssh) or in the cloud via scripts in the `\app` folder.
+Development happens locally/on-premise or in the cloud via scripts in the `\app` folder.
 
 ### Installation
 It depends on which machine you're developing but in general you want to create a virtual environment with the appropriate python version and run `pip install -r requirements_dev.txt`
@@ -37,17 +37,17 @@ python app/prepare.py -h
 
 #### 🎛 Tuning
 If you use an MLOps platform (AWS Sagemaker, Valohai, etc.), they usually have their own way of letting you perform hyperparameters tuning and you have to write a specific code with their sdk.
+
+Otherwise, for local tuning, you will run this script for tuning your neural network or scikit-learn estimator.
 ```
 python app/tune.py -h
 ```
 
-Otherwise, for local tuning, you will run this script for keras tuning your neural network or to tune the hyper-parameters of your scikit-learn estimator
-
 #### 🤖 Train
-This script is useful if you just want to train an existing tuned best model (if, for example, the data has changed or if you want to retrain the best model on the whole dataset)
+This script is useful if you just want to train/retrain an existing model on new data
 ```
 python app/train.py -h
 ```
 
 ## Disclaimer on Notebooks
-I love Jupyter notebooks but I don't like the idea of using a state machine once the task is defined. I use notebooks a lot, locally, for exploration, experimentation and reporting. Once I have a final definition of one of the task, I trascribe the code in the appropriate part of the project and use the scripts instead (that's how you run a process in parallel in the cloud in most cases, anyway).
+I love Jupyter notebooks and I use them a lot for exploration, experimentation and reporting but I prefer performing defined task with python scripts rather than using a state machine.
