@@ -1,5 +1,5 @@
 # Data science microservice template
-This is my go-to template for developing and pushing to production my data science microservices.
+This is my go-to template for developing my data science projects and pushing them to production as microservices.
 
 ## Production
 In production the API for inference is dockerized.
