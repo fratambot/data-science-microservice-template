@@ -56,7 +56,7 @@ To test the inference API during development you can move in the `\app` folder a
 ```
 uvicorn --reload main:app
 ```
-The interactive API UI run on [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+The interactive API UI runs on [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ## Disclaimer on Notebooks
 I love Jupyter notebooks and I use them a lot for exploration, experimentation and reporting but I prefer performing defined task with python scripts rather than using a state machine.
