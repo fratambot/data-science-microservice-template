@@ -14,9 +14,9 @@ make start
 ```
 
 ### Usage
-The API run on [http://localhost:8883/](http://localhost:8883/).
+The API runs on [http://localhost:8883/](http://localhost).
 
-You can interact with it from your browser using the FastAPI UI on [http://localhost:8883/docs](http://localhost:8883/docs)
+You can interact with it from your browser using the FastAPI UI on [http://localhost/docs](http://localhost/docs)
 
 ![alt text](https://github.com/fratambot/static/blob/main/images/FastAPI_UI.png?raw=True)
 
@@ -52,7 +52,7 @@ python app/train.py -h
 ```
 
 #### 🌐 API
-To test the inference API during development you can move in the `\app` and type:
+To test the inference API during development you can move in the `\app` folder and type:
 ```
 uvicorn --reload main:app
 ```
