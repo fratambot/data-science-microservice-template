@@ -6,7 +6,7 @@ services:
         build: .
         image: inference-api
         ports:
-            - 8883:8883
+            - 80:80
         volumes:
             - ./app:/app
         restart: unless-stopped
