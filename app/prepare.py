@@ -1,4 +1,4 @@
-# This script contains the pipeline to transform raw data to training data
+# This script contains the pipeline to transform raw data into training data
 
 import argparse
 

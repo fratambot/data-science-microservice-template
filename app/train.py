@@ -1,4 +1,4 @@
-# This script contains the pipeline for building, tuning and evaluate the model
+# This script contains the pipeline for train/retrain an existing model
 
 import argparse
 
