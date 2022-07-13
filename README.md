@@ -14,7 +14,7 @@ make start
 ```
 
 ### Usage
-The API runs on [http://localhost:8883/](http://localhost).
+The API runs on [http://localhost](http://localhost).
 
 You can interact with it from your browser using the FastAPI UI on [http://localhost/docs](http://localhost/docs)
 
