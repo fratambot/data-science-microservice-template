@@ -8,8 +8,10 @@ def main():
         "some_arg_for_training_like_epochs = ",
         some_arg_for_training_like_epochs,
     )
+    print("data_tag = ", data_tag)
+    # retrieve (new?) training data to train/retrain
     print("model_tag = ", model_tag)
-    # retrieve the model to train/retrain using model_tag
+    # retrieve the existing model to train/retrain
     print("=== Training === ")
     # train the model
     retrained_model = None
@@ -37,9 +39,16 @@ if __name__ == "__main__":
         type=str,
         help="a string used to retrieve the model to train",
     )
+    parser.add_argument(
+        "--data_tag",
+        required=True,
+        type=str,
+        help="a string used to retrieve training data",
+    )
 
     args = parser.parse_args()
     some_arg_for_training_like_epochs = args.some_arg_for_training_like_epochs
     model_tag = args.model_tag
+    data_tag = args.data_tag
     main()
     print("=== Finished ===")
